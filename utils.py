@@ -164,8 +164,10 @@ def get_data_loader(args):
     valid_dataloader = DataLoader(valid_dataset, batch_size=args.batch_size, collate_fn=collate, num_workers=2)
     test_dataloader = DataLoader(test_dataset, batch_size=args.batch_size, collate_fn=collate, num_workers=2)
 
-    n_classes = train_dataset.labels.shape[1]
-    num_feats = train_dataset.features.shape[1]
+    n_classes = train_dataset.num_labels
+
+    g,feat,label = train_dataset[0]
+    num_feats = feat.shape[1]
     g = train_dataset.graph
     data_info = {}
     data_info['n_classes'] = n_classes

@@ -2,7 +2,6 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
-import matplotlib.pyplot as plt
 from plot_utils import statistics_feature
 from dgl.nn.pytorch.softmax import edge_softmax
 import dgl
